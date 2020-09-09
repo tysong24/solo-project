@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const pool = require("./db");
+const path = require("path");
 
 // middleware
 app.use(cors());
@@ -10,6 +11,14 @@ app.use(express.json());
 // routes
 
 // create
+
+app.get("/", async (req, res) => {
+  try {
+    res.status(200).sendFile(path.resolve(__dirname, "../index.html"));
+  } catch (err) {
+    console.error(err);
+  }
+});
 
 app.post("/spend", async (req, res) => {
   try {
