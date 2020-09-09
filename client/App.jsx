@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+// import components needed that i need to pass things into.
+import SpendDisplayBox from "./boxes/SpendDisplayBox.jsx";
+import SpendCreateAndTotalBox from "./boxes/SpendCreateAndTotalBox.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -6,6 +9,11 @@ class App extends Component {
   }
 
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <SpendCreateAndTotalBox />
+        <SpendDisplayBox />
+      </div>
+    );
   }
 }

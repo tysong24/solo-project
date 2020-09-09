@@ -5,26 +5,39 @@ const initialState = {
   description: "",
   amount: 0,
   type: "",
+  totalSpend: 0,
+  allSpend: 0,
 };
 
 const spendFunctions = (state = initialState, action) => {
   // switch statement for the different reducers
   switch (action.type) {
     case types.ADD_SPEND:
-      return Object.assign({}, state, {
-        // id
-        // description
-        // amount
-        // type
-      });
+      // update totalSpend and allSpend
+      return {
+        ...state,
+        totalSpend,
+        allSpend, // etc
+      };
 
     case types.UPDATE_SPEND:
-      return Object.assign({}, state, {
-        // id
-        // description
-        // amount
-        // type
-      });
+      // update totalSpend and allSpend
+      return {
+        ...state,
+        totalSpend,
+        allSpend, // etc
+      };
+
+    case types.DELETE_SPEND:
+      // update totalSpend and allSpend
+      return {
+        ...state,
+        totalSpend,
+        allSpend, // etc
+      };
+
+    default:
+      return state;
   }
 };
 
