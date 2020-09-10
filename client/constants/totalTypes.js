@@ -1,0 +1,7 @@
+export const ADD_TOTALS = "ADD_TOTALS";
+
+export const ADD_ALLSPEND = "ADD_ALLSPEND";
+
+export const DELETE_TOTALS = "DELETE_TOTALS";
+
+export const DELETE_ALLSPEND = "DELETE_ALLSPEND";

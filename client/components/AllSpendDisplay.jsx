@@ -12,8 +12,19 @@ class AllSpendDisplay extends Component {
     return (
       <div>
         <h5>This is inside of all spend display</h5>
-        <SpendCreator />
-        <SpendDisplay />
+        <SpendCreator
+          addDescription={this.props.addDescription}
+          description={this.props.description}
+          addSpend={this.props.addSpend}
+          amount={this.props.amount}
+          addType={this.props.addType}
+          type={this.props.type}
+        />
+        <SpendDisplay
+          description={this.props.description}
+          amount={this.props.amount}
+          type={this.props.type}
+        />
       </div>
     );
   }

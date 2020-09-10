@@ -9,15 +9,18 @@ import * as actions from "../actions/actions";
 const mapStateToProps = (state) => ({
   // want to create state for the total amount spent
   // want to create state for total number of times spent
-  totalSpend: state.spend.totalSpend,
-  allSpend: state.spend.allSpend,
+  totalSpend: state.total.totals,
+  allSpend: state.total.allSpend,
 });
 
 // mapping dispatch to props
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => ({
   // pull the functionalities from reducer out for this.
-  addSpend: (newSpend) => dispatch(actions.addSpend(newSpend));
-};
+  addTotal: (amount) => dispatch(actions.addTotal(amount)),
+  allSpend: () => dispatch(actions.allSpend()),
+  deleteTotals: (amount) => dispatch(actions.deleteTotals(amount)),
+  deleteAllSpend: () => dispatch(actions.deleteAllSpend()),
+});
 
 // creating the new class
 class SpendCreateAndTotalBox extends Component {
@@ -31,6 +34,10 @@ class SpendCreateAndTotalBox extends Component {
         <TotalsDisplay
           totalSpend={this.props.totalSpend}
           allSpend={this.props.allSpend}
+          addTotal={this.props.addTotal}
+          allSpend={this.props.allSpend}
+          deleteTotals={this.props.deleteTotals}
+          deleteAllSpend={this.props.deleteAllSpend}
         />
       </div>
     );

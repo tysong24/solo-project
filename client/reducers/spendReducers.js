@@ -1,24 +1,34 @@
 import * as types from "../constants/spendTypes.js";
 
 const initialState = {
-  id: 0,
+  date: "",
   description: "",
   amount: 0,
   type: "",
-  totalSpend: 0,
-  allSpend: 0,
 };
 
 const spendFunctions = (state = initialState, action) => {
   // switch statement for the different reducers
+
   switch (action.type) {
     case types.ADD_SPEND:
       // update totalSpend and allSpend
-      allSpend += 1;
+
       return {
         ...state,
-        totalSpend,
-        allSpend, // etc
+        amount: action.payload,
+      };
+
+    case types.ADD_DESCRIPTION:
+      return {
+        ...state,
+        description: action.payload,
+      };
+
+    case types.ADD_TYPE:
+      return {
+        ...state,
+        type: action.payload,
       };
 
     case types.UPDATE_SPEND:
