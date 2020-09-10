@@ -1,8 +1,9 @@
 // will display all the spend rows
 // import the things that i need
-import React, { components } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../actions/actions";
+import AllSpendDisplay from "../components/AllSpendDisplay.jsx";
 
 const mapStateToProps = (state) => ({
   // pass in the state that will be prop drilled
@@ -13,8 +14,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  updateSpend: (spend_id) => dispatch(action.updateSpend(spend_id)),
-  deleteSpend: (spend_id) => dispatch(action.deleteSpend(spend_id)),
+  updateSpend: (spend_id) => dispatch(actions.updateSpend(spend_id)),
+  deleteSpend: (spend_id) => dispatch(actions.deleteSpend(spend_id)),
 });
 
 class SpendDisplayBox extends Component {
@@ -22,8 +23,13 @@ class SpendDisplayBox extends Component {
     super(props);
   }
   render() {
-    return <div className="spendbox"></div>;
+    return (
+      <div className="spendbox">
+        <h4>Inside of Spend Display</h4>
+        <AllSpendDisplay />
+      </div>
+    );
   }
 }
 
-export default SpendDisplayBox;
+export default connect(mapStateToProps, mapDispatchToProps)(SpendDisplayBox);

@@ -14,6 +14,7 @@ const spendFunctions = (state = initialState, action) => {
   switch (action.type) {
     case types.ADD_SPEND:
       // update totalSpend and allSpend
+      allSpend += 1;
       return {
         ...state,
         totalSpend,

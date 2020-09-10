@@ -9,10 +9,8 @@ import * as actions from "../actions/actions";
 const mapStateToProps = (state) => ({
   // want to create state for the total amount spent
   // want to create state for total number of times spent
-  //   totalSpend: state.spend.totalSpend,
-  //   allSpend: state.spend.allSpend,
-  totalSpend: 50,
-  allSpend: 3,
+  totalSpend: state.spend.totalSpend,
+  allSpend: state.spend.allSpend,
 });
 
 // mapping dispatch to props
@@ -26,6 +24,7 @@ class SpendCreateAndTotalBox extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     return (
       <div className="container">

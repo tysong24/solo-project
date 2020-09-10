@@ -10,7 +10,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h2>Maybe something is working in App?</h2>
         <MainBox />
       </div>
     );

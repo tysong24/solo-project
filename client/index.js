@@ -13,7 +13,6 @@ render(
   // wrap app in provider to use reducers
   <Provider store={store}>
     <App />
-    <div>{console.log("something happened")}This is working</div>
   </Provider>,
   document.getElementById("root")
 );

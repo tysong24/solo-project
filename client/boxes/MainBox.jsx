@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TotalBox from "./TotalBox.jsx";
+import SpendDisplayBox from "./SpendDisplayBox.jsx";
 
 class MainBox extends Component {
   constructor(props) {
@@ -9,8 +10,9 @@ class MainBox extends Component {
   render() {
     return (
       <div>
-        <h3>Hello from Main Box</h3>
+        <h1 id="header">Expense Tracker</h1>
         <TotalBox />
+        <SpendDisplayBox />
       </div>
     );
   }
