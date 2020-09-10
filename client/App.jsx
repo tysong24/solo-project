@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 // import components needed that i need to pass things into.
-import SpendDisplayBox from "./boxes/SpendDisplayBox.jsx";
-import SpendCreateAndTotalBox from "./boxes/SpendCreateAndTotalBox.jsx";
+import MainBox from "./boxes/MainBox.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -11,9 +10,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <SpendCreateAndTotalBox />
-        <SpendDisplayBox />
+        <h2>Maybe something is working in App?</h2>
+        <MainBox />
       </div>
     );
   }
 }
+
+export default App;

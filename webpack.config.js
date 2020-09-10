@@ -5,15 +5,13 @@ module.exports = {
   entry: "./client/index.js",
   output: {
     path: path.resolve(__dirname, "build"),
+    publicPath: "/",
     filename: "bundle.js",
   },
   devServer: {
-    publicPath: "../build/",
+    publicPath: "/build/",
     proxy: {
-      "/api": {
-        target: "http://localhost:5000",
-        pathRewrite: { "^/api": "/spend" },
-      },
+      "/api": "http://localhost:5000",
     },
   },
   module: {
@@ -27,14 +25,6 @@ module.exports = {
             presets: ["@babel/preset-env", "@babel/preset-react"],
           },
         },
-      },
-      {
-        test: /\.s[ac]ss$/i,
-        use: [
-          { loader: "style-loader" },
-          { loader: "css-loader" },
-          { loader: "sass-loader" },
-        ],
       },
     ],
   },

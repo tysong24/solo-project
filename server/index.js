@@ -10,10 +10,13 @@ app.use(express.json());
 
 // routes
 
+app.use("/build", express.static(path.resolve(__dirname, "../build")));
+
 // create
 
 app.get("/", async (req, res) => {
   try {
+    console.log("got into get");
     res.status(200).sendFile(path.resolve(__dirname, "../index.html"));
   } catch (err) {
     console.error(err);
