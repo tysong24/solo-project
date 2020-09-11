@@ -1,18 +1,10 @@
 // each individual row that is created for spend
 import React, { Component } from "react";
 
-class SpendDisplay extends Component {
-  constructor(props) {
-    super(props);
-  }
+function SpendDisplay(props) {
+  let values = [];
 
-  render() {
-    return (
-      <div>
-        <h6>Every Single Spend goes HERE!!!</h6>
-      </div>
-    );
-  }
+  return <div></div>;
 }
 
 export default SpendDisplay;

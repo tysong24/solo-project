@@ -10,6 +10,11 @@ export const addSpend = (amount) => ({
   payload: amount,
 });
 
+export const addDate = (date) => ({
+  type: types.ADD_DATE,
+  payload: date,
+});
+
 // delete
 export const deleteSpend = (spend_id) => ({
   type: types.DELETE_SPEND,

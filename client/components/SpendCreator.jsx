@@ -1,5 +1,5 @@
 // creator form that passes information to the reducer to create a new spend
-import React, { Component } from "react";
+import React from "react";
 // require("es6-promise").polyfill();
 // const fetch = require("isomorphic-fetch");
 
@@ -18,7 +18,7 @@ function SpendCreator(props) {
       body: JSON.stringify(props),
     })
       .then((data) => data.json())
-      .then((stuff) => console.log(stuff))
+      .then((stuff) => this.setState({ values: json }))
       .catch((err) => console.log(err));
   }
 
@@ -26,14 +26,17 @@ function SpendCreator(props) {
 
   return (
     <div>
-      <h6>inside of spend creator</h6>
-      <label htmlFor="description">Description</label>
+      <h3>Input Spend Here:</h3>
+      <label htmlFor="description">Description: </label> <br />
       <input onChange={(e) => props.addDescription(e.target.value)}></input>
-      <label htmlFor="amount">Amount</label>
-      <input onChange={(e) => props.addSpend(e.target.value)}></input>
-      <label htmlFor="type">Type</label>
-      <input onChange={(e) => props.addType(e.target.value)}></input>
-      <button onClick={handleClick}></button>
+      <br />
+      <label htmlFor="amount">Amount: </label> <br />
+      <input onChange={(e) => props.addSpend(e.target.value)}></input> <br />
+      <label htmlFor="type">Type: </label> <br />
+      <input onChange={(e) => props.addType(e.target.value)}></input> <br />
+      <label htmlFor="date">Date: </label> <br />
+      <input onChange={(e) => props.addDate(e.target.value)}></input> <br />
+      <button onClick={handleClick}>Add</button>
     </div>
   );
 }

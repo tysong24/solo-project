@@ -19,6 +19,14 @@ const spendFunctions = (state = initialState, action) => {
         amount: action.payload,
       };
 
+    case types.ADD_DATE:
+      // update totalSpend and allSpend
+
+      return {
+        ...state,
+        date: action.payload,
+      };
+
     case types.ADD_DESCRIPTION:
       return {
         ...state,
